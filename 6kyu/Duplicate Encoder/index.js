@@ -3,13 +3,9 @@
 function duplicateEncode(word) {
   let obj = {};
   word.split('').forEach(item => {
-    if (!item.match(/[A-Z]/)) {
-      !obj[item] ? (obj[item] = 1) : obj[item]++;
-    }
+    let label = item.toLowerCase();
+    !obj[label] ? (obj[label] = 1) : obj[label]++;
   });
-
-  console.log(word);
-  console.log(obj);
   return word
     .split('')
     .map(item => {
